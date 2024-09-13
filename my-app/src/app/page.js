@@ -23,7 +23,7 @@ const Td = styled.td`
 `;
 
 const Tr = styled.tr`
-  background-color: ${({ isEven }) => (isEven ? "#f9f9f9" : "white")};
+  background-color: ${({ $isEven }) => ($isEven ? "#f9f9f9" : "white")};
 `;
 
 const DebtsList = styled.ul`
@@ -37,7 +37,6 @@ const DebtsListItem = styled.li`
 `;
 
 const Index = () => {
-  console.log(data);
   return (
     <Table>
       <thead>
@@ -50,7 +49,7 @@ const Index = () => {
       </thead>
       <tbody>
         {data.map((person, index) => (
-          <Tr key={person.id} isEven={index % 2 === 0}>
+          <Tr key={person.id} $isEven={index % 2 === 0}>
             <Td>
               {person.name.firstName}{" "}
               {person.name.middleName ? person.name.middleName + " " : ""}

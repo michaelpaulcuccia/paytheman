@@ -6,7 +6,6 @@ import { data } from "../../../../data";
 const findDebtById = (debtId) => {
   for (const person of data) {
     const debt = person.debts.find((debt) => debt.debtId === debtId);
-    console.log(debt);
     if (debt) return debt;
   }
   return null;
