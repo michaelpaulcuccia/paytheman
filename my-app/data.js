@@ -1,6 +1,6 @@
-const data = [
+export const data = [
   {
-    id: "JMM-0001",
+    id: "JMM-001",
     name: {
       firstName: "John",
       middleName: "Michael",
@@ -26,7 +26,7 @@ const data = [
     },
     debts: [
       {
-        debtId: "JMM-DI-0001",
+        debtId: "JMM-DI-001",
         debtor: {
           company: "General Hospital",
           companyID: "GH-001",
@@ -64,9 +64,8 @@ const data = [
       },
     ],
   },
-  // Additional person objects
   {
-    id: "JMM-0002",
+    id: "AAJ-001",
     name: {
       firstName: "Alice",
       middleName: "Anne",
@@ -92,7 +91,7 @@ const data = [
     },
     debts: [
       {
-        debtId: "JMM-DI-0002",
+        debtId: "AAJ-DI-001",
         debtor: {
           company: "City Bank",
           companyID: "CB-002",
@@ -131,7 +130,7 @@ const data = [
     ],
   },
   {
-    id: "JMM-0003",
+    id: "MDL-001",
     name: {
       firstName: "Michael",
       middleName: "David",
@@ -157,7 +156,7 @@ const data = [
     },
     debts: [
       {
-        debtId: "JMM-DI-0003",
+        debtId: "MDL-DI-001",
         debtor: {
           company: "Tech Solutions",
           companyID: "TS-003",
@@ -196,7 +195,7 @@ const data = [
     ],
   },
   {
-    id: "JMM-0004",
+    id: "EGW-001",
     name: {
       firstName: "Emma",
       middleName: "Grace",
@@ -222,7 +221,7 @@ const data = [
     },
     debts: [
       {
-        debtId: "JMM-DI-0004",
+        debtId: "EGW-DI-001",
         debtor: {
           company: "Retail Inc.",
           companyID: "RI-004",
@@ -261,7 +260,7 @@ const data = [
     ],
   },
   {
-    id: "JMM-0005",
+    id: "DAB-001",
     name: {
       firstName: "David",
       middleName: "Alexander",
@@ -287,7 +286,7 @@ const data = [
     },
     debts: [
       {
-        debtId: "JMM-DI-0005",
+        debtId: "DAB-DI-001",
         debtor: {
           company: "Mortgage Co.",
           companyID: "MC-005",
@@ -326,72 +325,7 @@ const data = [
     ],
   },
   {
-    id: "JMM-0006",
-    name: {
-      firstName: "Sophia",
-      middleName: "Marie",
-      lastName: "Miller",
-      aliases: ["Sophie"],
-    },
-    address: {
-      street: "600 Maple Street",
-      city: "Fort Worth",
-      state: "Texas",
-      zip: "06789",
-    },
-    communication: {
-      email: {
-        primary: "sophia.miller@mail.com",
-        alt: ["sophia.miller@gmail.com"],
-      },
-      phone: {
-        cell: "555-678-9012",
-        home: "555-345-6789",
-        alt: [],
-      },
-      debts: [
-        {
-          debtId: "JMM-DI-0006",
-          debtor: {
-            company: "HealthCorp",
-            companyID: "HC-006",
-            address: {
-              street: "600 Maple Street",
-              city: "Fort Worth",
-              state: "Texas",
-              zip: "06789",
-            },
-            contacts: [
-              {
-                name: "Lisa Adams",
-                email: "lisa.adams@healthcorp.com",
-                phone: "555-678-9012",
-              },
-            ],
-            amountOriginallyOwed: 8000,
-            dateOfOriginalDebt: "2023-06-05",
-            contactWith: [
-              {
-                dateOfContact: "2024-04-15",
-                method: "call",
-                offer: {
-                  amount: 400,
-                  frequency: "monthly",
-                },
-                messages: [
-                  "Your payment is overdue. Please get in touch.",
-                  "We can set up a payment plan that suits you.",
-                ],
-                response: ["I need more time to arrange payment."],
-              },
-            ],
-          },
-        },
-      ],
-    },
-  },
-  {
-    id: "JMM-0007",
+    id: "JWT-001",
     name: {
       firstName: "James",
       middleName: "William",
@@ -407,7 +341,72 @@ const data = [
     communication: {
       email: {
         primary: "james.taylor@mail.com",
-        alt: ["james.taylor@gmail.com"],
+        alt: ["james.t@gmail.com"],
+      },
+      phone: {
+        cell: "555-678-9012",
+        home: "555-345-6789",
+        alt: [],
+      },
+    },
+    debts: [
+      {
+        debtId: "JWT-DI-001",
+        debtor: {
+          company: "Health Corp",
+          companyID: "HC-007",
+          address: {
+            street: "700 Birch Street",
+            city: "El Paso",
+            state: "Texas",
+            zip: "07890",
+          },
+          contacts: [
+            {
+              name: "Laura King",
+              email: "laura.king@healthcorp.com",
+              phone: "555-678-9012",
+            },
+          ],
+          amountOriginallyOwed: 4000,
+          dateOfOriginalDebt: "2023-06-10",
+          contactWith: [
+            {
+              dateOfContact: "2024-04-05",
+              method: "call",
+              offer: {
+                amount: 250,
+                frequency: "monthly",
+              },
+              messages: [
+                "Please contact us to arrange payment.",
+                "We are offering a new payment plan option.",
+              ],
+              response: ["I can manage monthly payments."],
+            },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    id: "LHK-001",
+    name: {
+      firstName: "Linda",
+      middleName: "Hannah",
+      lastName: "Kirk",
+      aliases: [],
+    },
+    address: {
+      street: "800 Maple Street",
+      city: "Corpus Christi",
+      state: "Texas",
+      zip: "08901",
+    },
+    communication: {
+      email: {
+        primary: "linda.kirk@mail.com",
+        alt: ["linda.kirk@gmail.com"],
       },
       phone: {
         cell: "555-789-0123",
@@ -417,103 +416,77 @@ const data = [
     },
     debts: [
       {
-        debtId: "JMM-DI-0007",
+        debtId: "LHK-DI-001",
         debtor: {
           company: "Auto Loan Co.",
-          companyID: "ALC-007",
+          companyID: "AL-008",
           address: {
-            street: "700 Birch Street",
-            city: "El Paso",
-            state: "Texas",
-            zip: "07890",
-          },
-          contacts: [
-            {
-              name: "Emily Clark",
-              email: "emily.clark@autoloanco.com",
-              phone: "555-789-0123",
-            },
-          ],
-          amountOriginallyOwed: 12000,
-          dateOfOriginalDebt: "2023-07-30",
-          contactWith: [
-            {
-              dateOfContact: "2024-03-10",
-              method: "text",
-              offer: {
-                amount: 600,
-                frequency: "monthly",
-              },
-              messages: [
-                "Reminder: Your payment is overdue.",
-                "We are happy to discuss a payment plan.",
-              ],
-              response: ["I will start paying monthly."],
-            },
-          ],
-        },
-      },
-    ],
-  },
-  {
-    id: "JMM-0008",
-    name: {
-      firstName: "Olivia",
-      middleName: "Jane",
-      lastName: "Davis",
-      aliases: ["Liv"],
-    },
-    address: {
-      street: "800 Cedar Avenue",
-      city: "Arlington",
-      state: "Texas",
-      zip: "08901",
-    },
-    communication: {
-      email: {
-        primary: "olivia.davis@mail.com",
-        alt: ["olivia.davis@gmail.com"],
-      },
-      phone: {
-        cell: "555-890-1234",
-        home: "555-567-8901",
-        alt: [],
-      },
-    },
-    debts: [
-      {
-        debtId: "JMM-DI-0008",
-        debtor: {
-          company: "University Loans",
-          companyID: "UL-008",
-          address: {
-            street: "800 Cedar Avenue",
-            city: "Arlington",
+            street: "800 Maple Street",
+            city: "Corpus Christi",
             state: "Texas",
             zip: "08901",
           },
           contacts: [
             {
-              name: "Daniel Wilson",
-              email: "daniel.wilson@universityloans.com",
-              phone: "555-890-1234",
+              name: "Tom Richardson",
+              email: "tom.richardson@autoloanco.com",
+              phone: "555-789-0123",
             },
           ],
-          amountOriginallyOwed: 6000,
-          dateOfOriginalDebt: "2023-08-25",
+          amountOriginallyOwed: 7500,
+          dateOfOriginalDebt: "2023-07-15",
           contactWith: [
             {
-              dateOfContact: "2024-02-05",
+              dateOfContact: "2024-03-20",
               method: "email",
               offer: {
-                amount: 300,
+                amount: 400,
                 frequency: "monthly",
               },
               messages: [
-                "Please review your payment options.",
-                "Contact us to discuss a plan.",
+                "Your payment is overdue.",
+                "We offer flexible payment options.",
               ],
-              response: ["I’ll review and get back to you."],
+              response: [
+                "I will review the payment options and get back to you.",
+              ],
+            },
+          ],
+        },
+      },
+      {
+        debtId: "LHK-DI-002",
+        debtor: {
+          company: "Utility Services",
+          companyID: "US-009",
+          address: {
+            street: "800 Maple Street",
+            city: "Corpus Christi",
+            state: "Texas",
+            zip: "08901",
+          },
+          contacts: [
+            {
+              name: "Nancy Davis",
+              email: "nancy.davis@utilityservices.com",
+              phone: "555-890-1234",
+            },
+          ],
+          amountOriginallyOwed: 300,
+          dateOfOriginalDebt: "2023-08-01",
+          contactWith: [
+            {
+              dateOfContact: "2024-02-10",
+              method: "text",
+              offer: {
+                amount: 50,
+                frequency: "one-time",
+              },
+              messages: [
+                "Your utility bill is overdue.",
+                "We can accept a partial payment to avoid service disruption.",
+              ],
+              response: ["I can make a one-time payment of $50."],
             },
           ],
         },
@@ -521,194 +494,64 @@ const data = [
     ],
   },
   {
-    id: "JMM-0009",
+    id: "SMR-001",
     name: {
-      firstName: "Benjamin",
-      middleName: "Ray",
-      lastName: "Anderson",
-      aliases: [],
+      firstName: "Samuel",
+      middleName: "Mark",
+      lastName: "Roberts",
+      aliases: ["Sam"],
     },
     address: {
-      street: "900 Spruce Street",
-      city: "Houston",
+      street: "900 Birchwood Lane",
+      city: "Lubbock",
       state: "Texas",
-      zip: "09012",
+      zip: "09123",
     },
     communication: {
       email: {
-        primary: "benjamin.anderson@mail.com",
-        alt: ["benjamin.anderson@gmail.com"],
+        primary: "samuel.roberts@mail.com",
+        alt: ["sam.roberts@gmail.com"],
       },
       phone: {
-        cell: "555-901-2345",
+        cell: "555-890-1234",
         home: "555-678-9012",
         alt: [],
       },
     },
     debts: [
       {
-        debtId: "JMM-DI-0009",
+        debtId: "SMR-DI-001",
         debtor: {
-          company: "Energy Corp.",
-          companyID: "EC-009",
+          company: "Credit Union",
+          companyID: "CU-009",
           address: {
-            street: "900 Spruce Street",
-            city: "Houston",
+            street: "900 Birchwood Lane",
+            city: "Lubbock",
             state: "Texas",
-            zip: "09012",
-          },
-          contacts: [
-            {
-              name: "Sandra Lee",
-              email: "sandra.lee@energycorp.com",
-              phone: "555-901-2345",
-            },
-          ],
-          amountOriginallyOwed: 4500,
-          dateOfOriginalDebt: "2023-09-10",
-          contactWith: [
-            {
-              dateOfContact: "2024-01-22",
-              method: "call",
-              offer: {
-                amount: 225,
-                frequency: "monthly",
-              },
-              messages: [
-                "We need to discuss your outstanding balance.",
-                "Please contact us to set up a payment plan.",
-              ],
-              response: ["I will contact you next week."],
-            },
-          ],
-        },
-      },
-    ],
-  },
-  {
-    id: "JMM-0010",
-    name: {
-      firstName: "Charlotte",
-      middleName: "Elise",
-      lastName: "Scott",
-      aliases: ["Charlie"],
-    },
-    address: {
-      street: "1000 Willow Drive",
-      city: "Austin",
-      state: "Texas",
-      zip: "10123",
-    },
-    communication: {
-      email: {
-        primary: "charlotte.scott@mail.com",
-        alt: ["charlotte.scott@gmail.com"],
-      },
-      phone: {
-        cell: "555-012-3456",
-        home: "555-789-0123",
-        alt: [],
-      },
-    },
-    debts: [
-      {
-        debtId: "JMM-DI-0010",
-        debtor: {
-          company: "Internet Services",
-          companyID: "IS-010",
-          address: {
-            street: "1000 Willow Drive",
-            city: "Austin",
-            state: "Texas",
-            zip: "10123",
-          },
-          contacts: [
-            {
-              name: "Paul Turner",
-              email: "paul.turner@internetservices.com",
-              phone: "555-012-3456",
-            },
-          ],
-          amountOriginallyOwed: 7000,
-          dateOfOriginalDebt: "2023-10-01",
-          contactWith: [
-            {
-              dateOfContact: "2024-11-05",
-              method: "text",
-              offer: {
-                amount: 350,
-                frequency: "monthly",
-              },
-              messages: [
-                "Your payment is overdue.",
-                "We are available to help you with a payment plan.",
-              ],
-              response: ["I will arrange for payments."],
-            },
-          ],
-        },
-      },
-    ],
-  },
-  {
-    id: "JMM-0011",
-    name: {
-      firstName: "Lucas",
-      middleName: "Henry",
-      lastName: "Harris",
-      aliases: ["Luke"],
-    },
-    address: {
-      street: "1100 Maple Lane",
-      city: "San Antonio",
-      state: "Texas",
-      zip: "11234",
-    },
-    communication: {
-      email: {
-        primary: "lucas.harris@mail.com",
-        alt: ["lucas.harris@gmail.com"],
-      },
-      phone: {
-        cell: "555-123-4567",
-        home: "555-890-1234",
-        alt: [],
-      },
-    },
-    debts: [
-      {
-        debtId: "JMM-DI-0011",
-        debtor: {
-          company: "Furniture Co.",
-          companyID: "FC-011",
-          address: {
-            street: "1100 Maple Lane",
-            city: "San Antonio",
-            state: "Texas",
-            zip: "11234",
+            zip: "09123",
           },
           contacts: [
             {
               name: "Rachel Green",
-              email: "rachel.green@furnitureco.com",
-              phone: "555-123-4567",
+              email: "rachel.green@creditunion.com",
+              phone: "555-890-1234",
             },
           ],
-          amountOriginallyOwed: 2500,
-          dateOfOriginalDebt: "2023-11-15",
+          amountOriginallyOwed: 2000,
+          dateOfOriginalDebt: "2023-09-30",
           contactWith: [
             {
-              dateOfContact: "2024-05-18",
-              method: "email",
+              dateOfContact: "2024-06-15",
+              method: "call",
               offer: {
-                amount: 125,
-                frequency: "monthly",
+                amount: 150,
+                frequency: "bi-weekly",
               },
               messages: [
-                "Your payment is overdue.",
-                "Please contact us to set up a payment plan.",
+                "We need to discuss your repayment options.",
+                "Bi-weekly payments are available.",
               ],
-              response: ["I will start monthly payments."],
+              response: ["I prefer bi-weekly payments."],
             },
           ],
         },
@@ -716,129 +559,101 @@ const data = [
     ],
   },
   {
-    id: "JMM-0012",
+    id: "RCJ-001",
     name: {
-      firstName: "Mia",
-      middleName: "Rose",
-      lastName: "Walker",
-      aliases: [],
+      firstName: "Rebecca",
+      middleName: "Claire",
+      lastName: "Johnson",
+      aliases: ["Becca"],
     },
     address: {
-      street: "1200 Oak Drive",
-      city: "Dallas",
+      street: "1000 Hilltop Drive",
+      city: "McAllen",
       state: "Texas",
-      zip: "12345",
+      zip: "09234",
     },
     communication: {
       email: {
-        primary: "mia.walker@mail.com",
-        alt: ["mia.walker@gmail.com"],
+        primary: "rebecca.johnson@mail.com",
+        alt: ["becca.johnson@gmail.com"],
       },
       phone: {
-        cell: "555-234-5678",
-        home: "555-345-6789",
+        cell: "555-901-2345",
+        home: "555-789-1234",
         alt: [],
       },
     },
     debts: [
       {
-        debtId: "JMM-DI-0012",
+        debtId: "RCJ-DI-001",
         debtor: {
-          company: "Utility Services",
-          companyID: "US-012",
+          company: "Loan Sharks",
+          companyID: "LS-010",
           address: {
-            street: "1200 Oak Drive",
-            city: "Dallas",
+            street: "1000 Hilltop Drive",
+            city: "McAllen",
             state: "Texas",
-            zip: "12345",
+            zip: "09234",
           },
           contacts: [
             {
               name: "Michael Scott",
-              email: "michael.scott@utilityservices.com",
-              phone: "555-234-5678",
+              email: "michael.scott@loansharks.com",
+              phone: "555-901-2345",
             },
           ],
-          amountOriginallyOwed: 9500,
-          dateOfOriginalDebt: "2023-12-20",
+          amountOriginallyOwed: 4000,
+          dateOfOriginalDebt: "2023-10-01",
           contactWith: [
             {
-              dateOfContact: "2024-07-12",
-              method: "call",
+              dateOfContact: "2024-05-15",
+              method: "text",
               offer: {
-                amount: 475,
+                amount: 300,
                 frequency: "monthly",
               },
               messages: [
-                "Reminder: Your payment is overdue.",
-                "Please contact us to arrange payment.",
+                "Your debt is overdue.",
+                "Monthly payment plans are available.",
               ],
-              response: ["I will contact you to discuss."],
+              response: ["I can do monthly payments."],
             },
           ],
         },
       },
-    ],
-  },
-  {
-    id: "JMM-0013",
-    name: {
-      firstName: "Noah",
-      middleName: "Eli",
-      lastName: "Thomas",
-      aliases: [],
-    },
-    address: {
-      street: "1300 Pine Road",
-      city: "Fort Worth",
-      state: "Texas",
-      zip: "13456",
-    },
-    communication: {
-      email: {
-        primary: "noah.thomas@mail.com",
-        alt: ["noah.thomas@gmail.com"],
-      },
-      phone: {
-        cell: "555-345-6789",
-        home: "555-456-7890",
-        alt: [],
-      },
-    },
-    debts: [
       {
-        debtId: "JMM-DI-0013",
+        debtId: "RCJ-DI-002",
         debtor: {
-          company: "Construction Co.",
-          companyID: "CC-013",
+          company: "Furniture World",
+          companyID: "FW-011",
           address: {
-            street: "1300 Pine Road",
-            city: "Fort Worth",
+            street: "1000 Hilltop Drive",
+            city: "McAllen",
             state: "Texas",
-            zip: "13456",
+            zip: "09234",
           },
           contacts: [
             {
-              name: "Linda Brown",
-              email: "linda.brown@constructionco.com",
-              phone: "555-345-6789",
+              name: "Linda Martinez",
+              email: "linda.martinez@furnitureworld.com",
+              phone: "555-901-2345",
             },
           ],
-          amountOriginallyOwed: 4000,
-          dateOfOriginalDebt: "2024-01-15",
+          amountOriginallyOwed: 1200,
+          dateOfOriginalDebt: "2023-11-15",
           contactWith: [
             {
-              dateOfContact: "2024-08-10",
-              method: "text",
+              dateOfContact: "2024-07-20",
+              method: "email",
               offer: {
-                amount: 200,
-                frequency: "bi-weekly",
+                amount: 100,
+                frequency: "one-time",
               },
               messages: [
-                "We need to arrange a new payment schedule.",
-                "Please contact us to discuss.",
+                "Your account has an overdue balance.",
+                "We can accept a one-time payment to settle the debt.",
               ],
-              response: ["I will start bi-weekly payments."],
+              response: ["I will make a one-time payment of $100."],
             },
           ],
         },
