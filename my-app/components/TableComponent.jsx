@@ -8,6 +8,7 @@ const TableContainer = styled.div`
   max-width: 100%;
   border-radius: 5px 5px 0 0;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  font-family: sans-serif;
 
   &::-webkit-scrollbar {
     height: 0.5rem;
@@ -33,21 +34,22 @@ const Table = styled.table`
 `;
 
 const Th = styled.th`
-  //border: 1px solid #ddd;
   padding: 8px;
-  background-color: #f4f4f4;
+  background-color: #b9b5b5;
   text-align: left;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 18px;
 `;
 
 const Td = styled.td`
-  //border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
   white-space: nowrap;
 `;
 
 const Tr = styled.tr`
-  background-color: ${({ $isEven }) => ($isEven ? "#b9b5b5" : "#ffffff")};
+  background-color: ${({ $isEven }) => ($isEven ? "#ffffff" : "#b9b5b5")};
 `;
 
 const DebtsList = styled.ul`

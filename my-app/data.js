@@ -48,9 +48,9 @@ export const data = [
           contactWith: [
             {
               dateOfContact: "2024-09-13",
-              method: "text",
+
               offer: {
-                amount: 200,
+                amount: 2000,
                 frequency: "monthly",
               },
               messages: [
@@ -58,6 +58,7 @@ export const data = [
                 "Thank you for your response",
               ],
               response: ["I am looking into how to pay this"],
+              sentiment: "neutral",
             },
           ],
         },
@@ -113,9 +114,9 @@ export const data = [
           contactWith: [
             {
               dateOfContact: "2024-08-20",
-              method: "email",
+
               offer: {
-                amount: 100,
+                amount: 1000,
                 frequency: "bi-weekly",
               },
               messages: [
@@ -123,6 +124,7 @@ export const data = [
                 "Please let us know your preferred payment plan.",
               ],
               response: ["I can do bi-weekly payments."],
+              sentiment: "neutral",
             },
           ],
         },
@@ -178,9 +180,9 @@ export const data = [
           contactWith: [
             {
               dateOfContact: "2024-07-10",
-              method: "call",
+
               offer: {
-                amount: 300,
+                amount: 3000,
                 frequency: "weekly",
               },
               messages: [
@@ -188,6 +190,7 @@ export const data = [
                 "Please confirm your preferred payment frequency.",
               ],
               response: ["I prefer to pay weekly."],
+              sentiment: "positive",
             },
           ],
         },
@@ -243,9 +246,9 @@ export const data = [
           contactWith: [
             {
               dateOfContact: "2024-06-25",
-              method: "text",
+
               offer: {
-                amount: 150,
+                amount: 1500,
                 frequency: "monthly",
               },
               messages: [
@@ -253,6 +256,7 @@ export const data = [
                 "We can offer a payment plan to help you manage this debt.",
               ],
               response: ["I will set up a monthly payment plan."],
+              sentiment: "positive",
             },
           ],
         },
@@ -308,9 +312,9 @@ export const data = [
           contactWith: [
             {
               dateOfContact: "2024-05-30",
-              method: "email",
+
               offer: {
-                amount: 500,
+                amount: 5000,
                 frequency: "bi-weekly",
               },
               messages: [
@@ -318,6 +322,7 @@ export const data = [
                 "Please confirm your payment arrangement.",
               ],
               response: ["I will arrange for bi-weekly payments."],
+              sentiment: "positive",
             },
           ],
         },
@@ -373,9 +378,9 @@ export const data = [
           contactWith: [
             {
               dateOfContact: "2024-04-05",
-              method: "call",
+
               offer: {
-                amount: 250,
+                amount: 2500,
                 frequency: "monthly",
               },
               messages: [
@@ -383,6 +388,7 @@ export const data = [
                 "We are offering a new payment plan option.",
               ],
               response: ["I can manage monthly payments."],
+              sentiment: "positive",
             },
           ],
         },
@@ -438,9 +444,9 @@ export const data = [
           contactWith: [
             {
               dateOfContact: "2024-03-20",
-              method: "email",
+
               offer: {
-                amount: 400,
+                amount: 4000,
                 frequency: "monthly",
               },
               messages: [
@@ -450,6 +456,7 @@ export const data = [
               response: [
                 "I will review the payment options and get back to you.",
               ],
+              sentiment: "negative",
             },
           ],
         },
@@ -477,9 +484,9 @@ export const data = [
           contactWith: [
             {
               dateOfContact: "2024-02-10",
-              method: "text",
+
               offer: {
-                amount: 50,
+                amount: 5000,
                 frequency: "one-time",
               },
               messages: [
@@ -487,6 +494,7 @@ export const data = [
                 "We can accept a partial payment to avoid service disruption.",
               ],
               response: ["I can make a one-time payment of $50."],
+              sentiment: "negative",
             },
           ],
         },
@@ -542,9 +550,9 @@ export const data = [
           contactWith: [
             {
               dateOfContact: "2024-06-15",
-              method: "call",
+
               offer: {
-                amount: 150,
+                amount: 1500,
                 frequency: "bi-weekly",
               },
               messages: [
@@ -552,6 +560,7 @@ export const data = [
                 "Bi-weekly payments are available.",
               ],
               response: ["I prefer bi-weekly payments."],
+              sentiment: "positive",
             },
           ],
         },
@@ -607,9 +616,8 @@ export const data = [
           contactWith: [
             {
               dateOfContact: "2024-05-15",
-              method: "text",
               offer: {
-                amount: 300,
+                amount: 3000,
                 frequency: "monthly",
               },
               messages: [
@@ -617,6 +625,7 @@ export const data = [
                 "Monthly payment plans are available.",
               ],
               response: ["I can do monthly payments."],
+              sentiment: "positive",
             },
           ],
         },
@@ -644,9 +653,9 @@ export const data = [
           contactWith: [
             {
               dateOfContact: "2024-07-20",
-              method: "email",
+
               offer: {
-                amount: 100,
+                amount: 1000,
                 frequency: "one-time",
               },
               messages: [
@@ -654,6 +663,7 @@ export const data = [
                 "We can accept a one-time payment to settle the debt.",
               ],
               response: ["I will make a one-time payment of $100."],
+              sentiment: "positive",
             },
           ],
         },
