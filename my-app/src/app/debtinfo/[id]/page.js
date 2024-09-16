@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { data } from "../../../../data";
 
@@ -16,6 +17,7 @@ export default function Page() {
   const itemID = pathname.split("/debtinfo/")[1];
 
   const debt = findDebtById(itemID);
+  console.log(debt);
 
   if (!debt) {
     return <div>Debt not found</div>;
@@ -27,9 +29,15 @@ export default function Page() {
       <p>
         <strong>Debt ID:</strong> {debt.debtId}
       </p>
-      <p>
-        <strong>Company:</strong> {debt.debtor.company}
-      </p>
+      <div>
+        <strong>Company:</strong>
+        <Link
+          href={`/creditor/${debt.debtor.company}`}
+          style={{ color: "blue", textDecoration: "underline" }}
+        >
+          {debt.debtor.company}
+        </Link>
+      </div>
       <p>
         <strong>Amount Originally Owed:</strong>{" "}
         {debt.debtor.amountOriginallyOwed}

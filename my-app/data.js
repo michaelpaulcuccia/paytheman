@@ -43,7 +43,7 @@ export const data = [
               phone: "478-855-9632",
             },
           ],
-          amountOriginallyOwed: 5000,
+          amountOriginallyOwed: 11000,
           dateOfOriginalDebt: "2023-01-27",
           contactWith: [
             {

@@ -91,7 +91,7 @@ const VerticalBarChart = ({ data, amountsOwed }) => {
           </BarItem>
         ))}
       </BarChartContainer>
-      <div style={{ marginTop: "40px" }}>Average Amount Owed: {average}</div>
+      <div style={{ marginTop: "40px" }}>Average Amount Owed: ${average}</div>
     </ComponentWrapper>
   );
 };

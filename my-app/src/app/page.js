@@ -61,8 +61,7 @@ const verticalBarData = [
   },
   {
     label: "10,000 or more",
-    //value: percent10001OrMore,
-    value: 100,
+    value: percent10001OrMore,
     color: "#E0393E",
     total: count10001OrMore,
   },
