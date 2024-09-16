@@ -192,6 +192,20 @@ export const data = [
               response: ["I prefer to pay weekly."],
               sentiment: "positive",
             },
+            {
+              dateOfContact: "2024-07-12",
+
+              offer: {
+                amount: 3000,
+                frequency: "weekly",
+              },
+              messages: [
+                "Are you ready to set up payments?",
+                "We will have someone call you.",
+              ],
+              response: ["Yes.", "Thank you."],
+              sentiment: "positive",
+            },
           ],
         },
       },
@@ -670,4 +684,333 @@ export const data = [
       },
     ],
   },
+  // --------------------------------------------------------------
+
+  {
+    id: "JWT-001",
+    name: {
+      firstName: "James",
+      middleName: "William",
+      lastName: "Taylor",
+      aliases: ["Jamie"],
+    },
+    address: {
+      street: "700 Birch Street",
+      city: "El Paso",
+      state: "Texas",
+      zip: "07890",
+    },
+    communication: {
+      email: {
+        primary: "james.taylor@mail.com",
+        alt: ["james.t@gmail.com"],
+      },
+      phone: {
+        cell: "555-678-9012",
+        home: "555-345-6789",
+        alt: [],
+      },
+    },
+    debts: [
+      {
+        debtId: "JWT-DI-001",
+        debtor: {
+          company: "Health Corp",
+          companyID: "HC-007",
+          address: {
+            street: "700 Birch Street",
+            city: "El Paso",
+            state: "Texas",
+            zip: "07890",
+          },
+          contacts: [
+            {
+              name: "Laura King",
+              email: "laura.king@healthcorp.com",
+              phone: "555-678-9012",
+            },
+          ],
+          amountOriginallyOwed: 4000,
+          dateOfOriginalDebt: "2023-06-10",
+          contactWith: [
+            {
+              dateOfContact: "2024-04-05",
+              offer: {
+                amount: 2500,
+                frequency: "monthly",
+              },
+              messages: [
+                "Please contact us to arrange payment.",
+                "We are offering a new payment plan option.",
+              ],
+              response: ["I can manage monthly payments."],
+              sentiment: "positive",
+            },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    id: "ASD-001",
+    name: {
+      firstName: "Alice",
+      middleName: "Sophia",
+      lastName: "Doe",
+      aliases: ["Ally"],
+    },
+    address: {
+      street: "123 Oak Avenue",
+      city: "Phoenix",
+      state: "Arizona",
+      zip: "85001",
+    },
+    communication: {
+      email: {
+        primary: "alice.doe@mail.com",
+        alt: ["ally.smith@gmail.com"],
+      },
+      phone: {
+        cell: "555-123-4567",
+        home: "555-987-6543",
+        alt: [],
+      },
+    },
+    debts: [
+      {
+        debtId: "ASD-DI-001",
+        debtor: {
+          company: "Retail Solutions",
+          companyID: "RS-010",
+          address: {
+            street: "456 Maple Drive",
+            city: "Phoenix",
+            state: "Arizona",
+            zip: "85002",
+          },
+          contacts: [
+            {
+              name: "Michael Stone",
+              email: "michael.stone@retailsolutions.com",
+              phone: "555-123-9876",
+            },
+          ],
+          amountOriginallyOwed: 5200,
+          dateOfOriginalDebt: "2023-04-15",
+          contactWith: [
+            {
+              dateOfContact: "2024-03-22",
+              offer: {
+                amount: 4500,
+                frequency: "bi-weekly",
+              },
+              messages: [
+                "We would like to discuss a payment plan.",
+                "Please confirm your availability.",
+              ],
+              response: ["I am available for bi-weekly payments."],
+              sentiment: "neutral",
+            },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    id: "BHD-001",
+    name: {
+      firstName: "Benjamin",
+      middleName: "Harris",
+      lastName: "Davis",
+      aliases: ["Ben"],
+    },
+    address: {
+      street: "890 Pine Road",
+      city: "Miami",
+      state: "Florida",
+      zip: "33101",
+    },
+    communication: {
+      email: {
+        primary: "benjamin.davis@mail.com",
+        alt: ["ben.h.davis@gmail.com"],
+      },
+      phone: {
+        cell: "555-234-5678",
+        home: "555-876-5432",
+        alt: [],
+      },
+    },
+    debts: [
+      {
+        debtId: "BHD-DI-001",
+        debtor: {
+          company: "Auto Finance Inc",
+          companyID: "AFI-015",
+          address: {
+            street: "567 Elm Street",
+            city: "Miami",
+            state: "Florida",
+            zip: "33102",
+          },
+          contacts: [
+            {
+              name: "Sarah Lopez",
+              email: "sarah.lopez@autofinance.com",
+              phone: "555-234-5670",
+            },
+          ],
+          amountOriginallyOwed: 3000,
+          dateOfOriginalDebt: "2023-01-20",
+          contactWith: [
+            {
+              dateOfContact: "2024-05-10",
+              offer: {
+                amount: 2500,
+                frequency: "monthly",
+              },
+              messages: [
+                "We need to finalize the payment arrangement.",
+                "Please confirm the payment schedule.",
+              ],
+              response: ["Monthly payments work for me."],
+              sentiment: "positive",
+            },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    id: "CHP-001",
+    name: {
+      firstName: "Charlotte",
+      middleName: "Hope",
+      lastName: "Parker",
+      aliases: ["Charlie"],
+    },
+    address: {
+      street: "321 Cedar Avenue",
+      city: "Houston",
+      state: "Texas",
+      zip: "77001",
+    },
+    communication: {
+      email: {
+        primary: "charlotte.parker@mail.com",
+        alt: ["charlie.parker@gmail.com"],
+      },
+      phone: {
+        cell: "555-567-8901",
+        home: "555-765-4321",
+        alt: [],
+      },
+    },
+    debts: [
+      {
+        debtId: "CHP-DI-001",
+        debtor: {
+          company: "Educational Loans Co",
+          companyID: "ELC-022",
+          address: {
+            street: "123 College Road",
+            city: "Houston",
+            state: "Texas",
+            zip: "77002",
+          },
+          contacts: [
+            {
+              name: "John Baker",
+              email: "john.baker@educo.com",
+              phone: "555-567-8902",
+            },
+          ],
+          amountOriginallyOwed: 12000,
+          dateOfOriginalDebt: "2023-08-25",
+          contactWith: [
+            {
+              dateOfContact: "2024-07-15",
+              offer: {
+                amount: 11000,
+                frequency: "quarterly",
+              },
+              messages: [
+                "We need to set up your quarterly payment.",
+                "Please confirm the new terms.",
+              ],
+              response: ["Quarterly payments sound good."],
+              sentiment: "positive",
+            },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    id: "DMW-001",
+    name: {
+      firstName: "Daniel",
+      middleName: "Michael",
+      lastName: "Wilson",
+      aliases: ["Dan"],
+    },
+    address: {
+      street: "456 Walnut Street",
+      city: "Denver",
+      state: "Colorado",
+      zip: "80201",
+    },
+    communication: {
+      email: {
+        primary: "daniel.wilson@mail.com",
+        alt: ["dan.m.wilson@gmail.com"],
+      },
+      phone: {
+        cell: "555-345-6789",
+        home: "555-234-5678",
+        alt: [],
+      },
+    },
+    debts: [
+      {
+        debtId: "DMW-DI-001",
+        debtor: {
+          company: "Tech Equipment Ltd",
+          companyID: "TEL-030",
+          address: {
+            street: "789 Industrial Road",
+            city: "Denver",
+            state: "Colorado",
+            zip: "80202",
+          },
+          contacts: [
+            {
+              name: "Emily Green",
+              email: "emily.green@tech.com",
+              phone: "555-345-6780",
+            },
+          ],
+          amountOriginallyOwed: 5500,
+          dateOfOriginalDebt: "2023-05-18",
+          contactWith: [
+            {
+              dateOfContact: "2024-06-12",
+              offer: {
+                amount: 5000,
+                frequency: "monthly",
+              },
+              messages: [
+                "Let's confirm your monthly payments.",
+                "Please review the updated payment plan.",
+              ],
+              response: ["Monthly payments confirmed."],
+              sentiment: "neutral",
+            },
+          ],
+        },
+      },
+    ],
+  },
+
+  // --------------------------------------------------------------
 ];

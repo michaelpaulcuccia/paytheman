@@ -23,6 +23,9 @@ export default function Page() {
     return <div>Debt not found</div>;
   }
 
+  const { contactWith, dateOfOriginalDebt } = debt.debtor;
+  const [{ offer }] = contactWith;
+
   return (
     <div>
       <h1>Debt Details</h1>
@@ -39,12 +42,42 @@ export default function Page() {
         </Link>
       </div>
       <p>
-        <strong>Amount Originally Owed:</strong>{" "}
+        <strong>Amount Originally Owed:</strong> $
         {debt.debtor.amountOriginallyOwed}
       </p>
       <p>
-        <strong>Date of Original Debt:</strong> {debt.debtor.dateOfOriginalDebt}
+        <strong>Offer: </strong>${offer.amount} at {offer.frequency}
       </p>
+      <p>
+        <strong>Date of Original Debt:</strong> {dateOfOriginalDebt}
+      </p>
+      <br />
+      <h3>Recent Communications</h3>
+      <br />
+      {contactWith.map((contact, i) => (
+        <div key={i}>
+          <p>
+            <strong>Date of Last Contact:</strong> {contact.dateOfContact}
+          </p>
+          <p>
+            <strong>Messages:</strong>
+          </p>
+          {contact.messages.map((message, j) => (
+            <div key={j}>{message}</div>
+          ))}
+          <p>
+            <strong>Sentiment:</strong> {contact.sentiment}
+          </p>
+          <div>
+            <strong>Responses:</strong>
+            {contact.response.map((res, k) => (
+              <p key={k}>{res}</p>
+            ))}
+          </div>
+          <br />
+          <br />
+        </div>
+      ))}
     </div>
   );
 }

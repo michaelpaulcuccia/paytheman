@@ -4,13 +4,18 @@ import styled from "styled-components";
 import Link from "next/link";
 
 const TableContainer = styled.div`
+  max-height: calc(
+    10 * 3rem
+  ); /* Assuming each row is approximately 3rem tall */
+  overflow-y: auto;
   overflow-x: auto;
   border-radius: 5px 5px 0 0;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 
+  /* Horizontal scrollbar */
   &::-webkit-scrollbar {
     height: 0.5rem;
-    width: 0.25rem;
+    width: 0.5rem;
   }
 
   &::-webkit-scrollbar-thumb {
