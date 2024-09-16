@@ -30,7 +30,23 @@ const extractSentiments = (peopleArray) => {
   );
 };
 const sentiments = extractSentiments(data);
-console.log(sentiments);
+
+//NEW OBJ
+const totalCount = sentiments.length;
+const positiveCount = sentiments.filter(
+  (sentiment) => sentiment === "positive"
+).length;
+const positivePercentage = Math.round((positiveCount / totalCount) * 100);
+const horizontalBarData2 = [
+  {
+    label: "Positive",
+    number: positiveCount,
+    color: "#f22",
+    percent: positivePercentage,
+  },
+];
+console.log(horizontalBarData2);
+//******************************* */
 
 //VERTICAL BAR CHART DATA
 const verticalBarData = [
