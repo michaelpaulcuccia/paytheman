@@ -65,9 +65,7 @@ const TableComponent = ({ data }) => {
     <TableContainer>
       <h2
         style={{
-          background: "#b9b5b5",
           color: "black",
-          borderBottom: "1px solid white",
           padding: "4px 0px 4px 8px",
         }}
       >
