@@ -7,11 +7,6 @@ const Container = styled.div`
   margin: auto;
 `;
 
-const Title = styled.h1`
-  text-align: center;
-  color: #222;
-`;
-
 const Chart = styled.div`
   position: relative;
   padding: 1em;
@@ -88,12 +83,23 @@ export default function HorizontalBarChart({ data }) {
   return (
     <Container>
       <Chart>
-        {data.map(({ label, percent, color }, index) => (
+        {data.map(({ label, percent, color, number }, index) => (
           <Part key={index}>
             <div className="label">{label}</div>
+            <div></div>
             <Bar percent={percent} color={color}>
               <div className="label">{percent}%</div>
             </Bar>
+            <div
+              style={{
+                color: "white",
+                marginTop: "10px",
+                fontSize: "18px",
+                marginLeft: "6px",
+              }}
+            >
+              {number}
+            </div>
           </Part>
         ))}
       </Chart>

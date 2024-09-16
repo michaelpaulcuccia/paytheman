@@ -30,6 +30,7 @@ const extractSentiments = (peopleArray) => {
   );
 };
 const sentiments = extractSentiments(data);
+console.log(sentiments);
 
 //VERTICAL BAR CHART DATA
 const verticalBarData = [
@@ -41,9 +42,9 @@ const verticalBarData = [
 
 //HORIZTONAL BAR CHART DATA
 const horizontalBarData = [
-  { label: "Yes", percent: 75, color: "#f22" }, // red
-  { label: "No", percent: 25, color: "#56a" }, // blue
-  { label: "Maybe", percent: 38, color: "#2a5" }, // green
+  { label: "Positive", percent: 100, color: "#f22", number: 7 }, // red
+  { label: "Negative", percent: 25, color: "#56a", number: 2 }, // blue
+  { label: "Neutral", percent: 38, color: "#2a5", number: 2 }, // green
 ];
 
 const Index = () => {
