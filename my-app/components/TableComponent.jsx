@@ -12,7 +12,6 @@ const TableContainer = styled.div`
   border-radius: 5px 5px 0 0;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 
-  /* Horizontal scrollbar */
   &::-webkit-scrollbar {
     height: 0.5rem;
     width: 0.5rem;
@@ -33,7 +32,7 @@ const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
   table-layout: auto;
-  min-width: 1000px; /* Minimum width for horizontal scrolling */
+  min-width: 1200px; /* Minimum width for horizontal scrolling */
 `;
 
 const Th = styled.th`
