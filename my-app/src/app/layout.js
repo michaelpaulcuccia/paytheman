@@ -1,17 +1,8 @@
-import localFont from "next/font/local";
 import StyledComponentsRegistry from "../../lib/registry";
 import "./globals.css";
+import { Raleway } from "next/font/google";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const ralway = Raleway({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -22,9 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <StyledComponentsRegistry>
-        <body className={`${geistSans.variable} ${geistMono.variable}`}>
-          {children}
-        </body>
+        <body className={ralway.className}>{children}</body>
       </StyledComponentsRegistry>
     </html>
   );

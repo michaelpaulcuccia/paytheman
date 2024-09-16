@@ -8,7 +8,6 @@ const TableContainer = styled.div`
   max-width: 100%;
   border-radius: 5px 5px 0 0;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  font-family: sans-serif;
 
   &::-webkit-scrollbar {
     height: 0.5rem;

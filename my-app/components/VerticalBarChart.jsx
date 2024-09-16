@@ -67,7 +67,7 @@ const VerticalBarChart = ({ data }) => {
             <div className="label">
               {item.label}
               <br />
-              Totatl: {item.total}
+              Total: {item.total}
             </div>
             <div className="value">{item.value}%</div>
           </BarItem>

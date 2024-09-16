@@ -5,7 +5,6 @@ const Container = styled.div`
   background: #fff;
   width: 400px;
   margin: auto;
-  font-family: sans-serif;
 `;
 
 const Chart = styled.div`

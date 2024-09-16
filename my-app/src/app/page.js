@@ -127,7 +127,6 @@ const Index = () => {
     <Root>
       <TableComponent data={data} />
       <AverageAmountOwed numbers={amountsOwed} />
-      {/* <Sentiment sentiments={sentiments} /> */}
       <VerticalBarChart data={verticalBarData} />
       <div style={{ height: "200px" }}></div>
       <HorizontalBarChart data={horizontalBarData} />
