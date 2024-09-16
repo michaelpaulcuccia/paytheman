@@ -2,17 +2,13 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const Container = styled.div`
-  background: #fff;
-  //width: 400px;
-  width: 50%;
+  width: 100%;
   margin: auto;
 `;
 
 const Chart = styled.div`
   position: relative;
   padding: 1em;
-  //background: #2f2f2f;
-  background: white;
   border-radius: 5px;
   font-size: 16px;
 
@@ -20,10 +16,10 @@ const Chart = styled.div`
     content: "";
     position: absolute;
     left: 25%;
-    top: 7.5%;
+    top: 8.5%;
     transform: translateX(100%);
-    width: 4px;
-    background: #2f2f2f;
+    width: 3px;
+    background: #4c4c4c;
     height: 86%;
     border-radius: 2px;
   }
@@ -84,24 +80,17 @@ const Bar = styled.div`
 export default function HorizontalBarChart({ data }) {
   return (
     <Container>
+      <h2>Interpretation of Interactions:</h2>
       <Chart>
         {data.map(({ label, percent, color, number }, index) => (
           <Part key={index}>
-            <div className="label">{label}</div>
+            <div className="label">
+              {label}: {number}
+            </div>
             <div></div>
             <Bar percent={percent} color={color}>
               <div className="label">{percent}%</div>
             </Bar>
-            <div
-              style={{
-                color: "#2f2f2f",
-                marginTop: "10px",
-                fontSize: "18px",
-                marginLeft: "6px",
-              }}
-            >
-              {number}
-            </div>
           </Part>
         ))}
       </Chart>

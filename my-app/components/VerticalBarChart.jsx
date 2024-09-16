@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const ComponentWrapper = styled.div`
-  //max-width: 45rem;
-  width: 50%;
+  width: 100%;
   margin-inline: auto;
 `;
 
@@ -64,9 +63,20 @@ const DataContainer = styled.div`
   margin-top: 4px;
 `;
 
-const VerticalBarChart = ({ data }) => {
+const calculateAverage = (numbers) => {
+  if (numbers.length === 0) return 0;
+  const total = numbers.reduce((acc, num) => acc + num, 0);
+  const average = total / numbers.length;
+  const formattedAverage = parseFloat(average.toFixed(2));
+  return formattedAverage;
+};
+
+const VerticalBarChart = ({ data, amountsOwed }) => {
+  const average = calculateAverage(amountsOwed);
+
   return (
     <ComponentWrapper>
+      <h2>Data Related to Debt Amounts:</h2>
       <BarChartContainer>
         {data.map((item, index) => (
           <BarItem key={index} value={item.value} color={item.color}>
@@ -81,6 +91,7 @@ const VerticalBarChart = ({ data }) => {
           </BarItem>
         ))}
       </BarChartContainer>
+      <div style={{ marginTop: "40px" }}>Average Amount Owed: {average}</div>
     </ComponentWrapper>
   );
 };

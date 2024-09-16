@@ -7,7 +7,6 @@ const TableContainer = styled.div`
   overflow-x: auto;
   border-radius: 5px 5px 0 0;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  width: 1200px;
 
   &::-webkit-scrollbar {
     height: 0.5rem;
@@ -29,14 +28,14 @@ const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
   table-layout: auto;
-  min-width: 865px; /* Minimum width for horizontal scrolling */
+  min-width: 1000px; /* Minimum width for horizontal scrolling */
 `;
 
 const Th = styled.th`
   padding: 8px;
   background-color: #b9b5b5;
   text-align: left;
-  color: white;
+  color: black;
   letter-spacing: 1px;
   font-size: 18px;
 `;
@@ -64,6 +63,16 @@ const DebtsListItem = styled.li`
 const TableComponent = ({ data }) => {
   return (
     <TableContainer>
+      <h2
+        style={{
+          background: "#b9b5b5",
+          color: "black",
+          borderBottom: "1px solid white",
+          padding: "4px 0px 4px 8px",
+        }}
+      >
+        Debtor Information:
+      </h2>
       <Table>
         <thead>
           <tr>

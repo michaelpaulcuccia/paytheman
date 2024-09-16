@@ -3,7 +3,6 @@ import React from "react";
 import { data } from "../../data";
 import Wrapper from "../../components/Wrapper";
 import TableComponent from "../../components/TableComponent";
-import AverageAmountOwed from "../../components/AverageAmountOwed";
 import VerticalBarChart from "../../components/VerticalBarChart";
 import HorizontalBarChart from "../../components/HorizontalBarChart";
 
@@ -124,9 +123,8 @@ const Index = () => {
       <Wrapper>
         <TableComponent data={data} />
       </Wrapper>
-      <AverageAmountOwed numbers={amountsOwed} />
       <Wrapper>
-        <VerticalBarChart data={verticalBarData} />
+        <VerticalBarChart data={verticalBarData} amountsOwed={amountsOwed} />
         <HorizontalBarChart data={horizontalBarData} />
       </Wrapper>
     </>
