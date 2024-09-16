@@ -64,7 +64,11 @@ const VerticalBarChart = ({ data }) => {
       <BarChartContainer>
         {data.map((item, index) => (
           <BarItem key={index} value={item.value} color={item.color}>
-            <div className="label">{item.label}</div>
+            <div className="label">
+              {item.label}
+              <br />
+              Totatl: {item.total}
+            </div>
             <div className="value">{item.value}%</div>
           </BarItem>
         ))}

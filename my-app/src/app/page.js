@@ -12,13 +12,66 @@ const Root = styled.div`
   padding: 40px 20px;
 `;
 
-//AVERAGE AMOUNT
+//AMOUNTS
 const extractAmountsOwed = (peopleArray) => {
   return peopleArray.flatMap((person) =>
     person.debts.map((debt) => debt.debtor.amountOriginallyOwed)
   );
 };
 const amountsOwed = extractAmountsOwed(data);
+
+//CONSTANT TO BE RESUSED
+const totalCountOfAmounts = amountsOwed.length;
+// Count values in each range
+const count1000OrLess = amountsOwed.filter((value) => value <= 1000).length;
+const count1001To5000 = amountsOwed.filter(
+  (value) => value >= 1001 && value <= 5000
+).length;
+const count5001To10000 = amountsOwed.filter(
+  (value) => value >= 5001 && value <= 10000
+).length;
+const count10001OrMore = amountsOwed.filter((value) => value >= 10001).length;
+// Calculate percentages
+const percent1000OrLess = Math.round(
+  (count1000OrLess / totalCountOfAmounts) * 100
+);
+const percent1001To5000 = Math.round(
+  (count1001To5000 / totalCountOfAmounts) * 100
+);
+const percent5001To10000 = Math.round(
+  (count5001To10000 / totalCountOfAmounts) * 100
+);
+const percent10001OrMore = Math.round(
+  (count10001OrMore / totalCountOfAmounts) * 100
+);
+
+//VERTICAL BAR CHART DATA
+const verticalBarData = [
+  {
+    label: "up to $1,000",
+    value: percent1000OrLess,
+    color: "#5EB344",
+    total: count1000OrLess,
+  },
+  {
+    label: "$5,000 or less",
+    value: percent1001To5000,
+    color: "#FCB72A",
+    total: count1001To5000,
+  },
+  {
+    label: "up to $10,000",
+    value: percent5001To10000,
+    color: "#069CDB",
+    total: count5001To10000,
+  },
+  {
+    label: "10,000 or more",
+    value: percent10001OrMore,
+    color: "#E0393E",
+    total: count10001OrMore,
+  },
+];
 
 //SENTIMENT INFO
 const extractSentiments = (peopleArray) => {
@@ -68,15 +121,6 @@ const horizontalBarData = [
     percent: neutralPercentage,
   },
 ];
-console.log(horizontalBarData);
-
-//VERTICAL BAR CHART DATA
-const verticalBarData = [
-  { label: "Label 1", value: 80, color: "#5EB344" },
-  { label: "Label 2", value: 50, color: "#FCB72A" },
-  { label: "Label 3", value: 40, color: "#069CDB" },
-  { label: "Label 4", value: 25, color: "#E0393E" },
-];
 
 const Index = () => {
   return (
@@ -85,6 +129,7 @@ const Index = () => {
       <AverageAmountOwed numbers={amountsOwed} />
       {/* <Sentiment sentiments={sentiments} /> */}
       <VerticalBarChart data={verticalBarData} />
+      <div style={{ height: "200px" }}></div>
       <HorizontalBarChart data={horizontalBarData} />
     </Root>
   );

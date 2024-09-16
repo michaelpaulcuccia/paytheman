@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 
 const calculateAverage = (numbers) => {
   if (numbers.length === 0) return 0;
