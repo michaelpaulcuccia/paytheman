@@ -5,12 +5,13 @@ const Container = styled.div`
   background: #fff;
   width: 400px;
   margin: auto;
+  font-family: sans-serif;
 `;
 
 const Chart = styled.div`
   position: relative;
   padding: 1em;
-  background: #222;
+  background: #2f2f2f;
   border-radius: 5px;
   font-size: 16px;
 
