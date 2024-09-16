@@ -5,9 +5,9 @@ import Link from "next/link";
 
 const TableContainer = styled.div`
   overflow-x: auto;
-  max-width: 100%;
   border-radius: 5px 5px 0 0;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  width: 1200px;
 
   &::-webkit-scrollbar {
     height: 0.5rem;

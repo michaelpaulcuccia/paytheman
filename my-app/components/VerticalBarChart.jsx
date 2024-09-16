@@ -2,12 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 const ComponentWrapper = styled.div`
-  max-width: 45rem;
+  //max-width: 45rem;
+  width: 50%;
   margin-inline: auto;
 `;
 
 const BarChartContainer = styled.div`
-  height: 10rem;
+  height: 10rem; //160px
   display: grid;
   grid-auto-flow: column;
   gap: 2%;
@@ -49,6 +50,7 @@ const BarItem = styled.div`
 
   & > .value {
     inset: auto 0 100% 0;
+    margin-bottom: 3px;
   }
 
   @keyframes item-height {
@@ -58,6 +60,10 @@ const BarItem = styled.div`
   }
 `;
 
+const DataContainer = styled.div`
+  margin-top: 4px;
+`;
+
 const VerticalBarChart = ({ data }) => {
   return (
     <ComponentWrapper>
@@ -65,9 +71,11 @@ const VerticalBarChart = ({ data }) => {
         {data.map((item, index) => (
           <BarItem key={index} value={item.value} color={item.color}>
             <div className="label">
-              {item.label}
-              <br />
-              Total: {item.total}
+              <DataContainer>
+                {item.label}
+                <br />
+                Total: {item.total}
+              </DataContainer>
             </div>
             <div className="value">{item.value}%</div>
           </BarItem>

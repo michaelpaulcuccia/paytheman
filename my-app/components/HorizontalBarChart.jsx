@@ -3,14 +3,16 @@ import styled, { keyframes } from "styled-components";
 
 const Container = styled.div`
   background: #fff;
-  width: 400px;
+  //width: 400px;
+  width: 50%;
   margin: auto;
 `;
 
 const Chart = styled.div`
   position: relative;
   padding: 1em;
-  background: #2f2f2f;
+  //background: #2f2f2f;
+  background: white;
   border-radius: 5px;
   font-size: 16px;
 
@@ -21,7 +23,7 @@ const Chart = styled.div`
     top: 7.5%;
     transform: translateX(100%);
     width: 4px;
-    background: #fff;
+    background: #2f2f2f;
     height: 86%;
     border-radius: 2px;
   }
@@ -45,7 +47,7 @@ const Part = styled.div`
     margin: 0.5em 0;
     height: 2em;
     line-height: 2em;
-    color: #fff;
+    color: #2f2f2f;
     font-weight: 600;
   }
 `;
@@ -92,7 +94,7 @@ export default function HorizontalBarChart({ data }) {
             </Bar>
             <div
               style={{
-                color: "white",
+                color: "#2f2f2f",
                 marginTop: "10px",
                 fontSize: "18px",
                 marginLeft: "6px",

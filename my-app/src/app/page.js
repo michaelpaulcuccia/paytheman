@@ -1,16 +1,11 @@
 "use client";
 import React from "react";
-import styled from "styled-components";
 import { data } from "../../data";
+import Wrapper from "../../components/Wrapper";
 import TableComponent from "../../components/TableComponent";
 import AverageAmountOwed from "../../components/AverageAmountOwed";
 import VerticalBarChart from "../../components/VerticalBarChart";
 import HorizontalBarChart from "../../components/HorizontalBarChart";
-
-const Root = styled.div`
-  width: 100%;
-  padding: 40px 20px;
-`;
 
 //AMOUNTS
 const extractAmountsOwed = (peopleArray) => {
@@ -67,7 +62,8 @@ const verticalBarData = [
   },
   {
     label: "10,000 or more",
-    value: percent10001OrMore,
+    //value: percent10001OrMore,
+    value: 100,
     color: "#E0393E",
     total: count10001OrMore,
   },
@@ -124,13 +120,16 @@ const horizontalBarData = [
 
 const Index = () => {
   return (
-    <Root>
-      <TableComponent data={data} />
+    <>
+      <Wrapper>
+        <TableComponent data={data} />
+      </Wrapper>
       <AverageAmountOwed numbers={amountsOwed} />
-      <VerticalBarChart data={verticalBarData} />
-      <div style={{ height: "200px" }}></div>
-      <HorizontalBarChart data={horizontalBarData} />
-    </Root>
+      <Wrapper>
+        <VerticalBarChart data={verticalBarData} />
+        <HorizontalBarChart data={horizontalBarData} />
+      </Wrapper>
+    </>
   );
 };
 
