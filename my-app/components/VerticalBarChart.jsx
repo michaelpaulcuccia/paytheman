@@ -58,7 +58,7 @@ const BarItem = styled.div`
   }
 `;
 
-const BarChart = ({ data }) => {
+const VerticalBarChart = ({ data }) => {
   return (
     <ComponentWrapper>
       <BarChartContainer>
@@ -73,4 +73,4 @@ const BarChart = ({ data }) => {
   );
 };
 
-export default BarChart;
+export default VerticalBarChart;

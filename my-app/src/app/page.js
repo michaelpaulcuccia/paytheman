@@ -5,7 +5,8 @@ import { data } from "../../data";
 import TableComponent from "../../components/TableComponent";
 import AverageAmountOwed from "../../components/AverageAmountOwed";
 import Sentiment from "../../components/Sentiments";
-import BarChart from "../../components/BarChart";
+import VerticalBarChart from "../../components/VerticalBarChart";
+import HorizontalBarChart from "../../components/HorizontalBarChart";
 
 const Root = styled.div`
   width: 100%;
@@ -30,10 +31,19 @@ const extractSentiments = (peopleArray) => {
 };
 const sentiments = extractSentiments(data);
 
-const barData = [
+//VERTICAL BAR CHART DATA
+const verticalBarData = [
   { label: "Label 1", value: 80, color: "#5EB344" },
   { label: "Label 2", value: 50, color: "#FCB72A" },
-  { label: "Label 3", value: 40, color: "#efefef" },
+  { label: "Label 3", value: 40, color: "#069CDB" },
+  { label: "Label 4", value: 25, color: "#E0393E" },
+];
+
+//HORIZTONAL BAR CHART DATA
+const horizontalBarData = [
+  { label: "Yes", percent: 75, color: "#f22" }, // red
+  { label: "No", percent: 25, color: "#56a" }, // blue
+  { label: "Maybe", percent: 38, color: "#2a5" }, // green
 ];
 
 const Index = () => {
@@ -42,7 +52,8 @@ const Index = () => {
       <TableComponent data={data} />
       <AverageAmountOwed numbers={amountsOwed} />
       <Sentiment sentiments={sentiments} />
-      <BarChart data={barData} />
+      <VerticalBarChart data={verticalBarData} />
+      <HorizontalBarChart data={horizontalBarData} />
     </Root>
   );
 };
