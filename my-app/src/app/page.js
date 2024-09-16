@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { data } from "../../data";
 import TableComponent from "../../components/TableComponent";
 import AverageAmountOwed from "../../components/AverageAmountOwed";
-import Sentiment from "../../components/Sentiments";
 import VerticalBarChart from "../../components/VerticalBarChart";
 import HorizontalBarChart from "../../components/HorizontalBarChart";
 
@@ -31,22 +30,45 @@ const extractSentiments = (peopleArray) => {
 };
 const sentiments = extractSentiments(data);
 
-//NEW OBJ
+//CONSTANT TO BE REUSED
 const totalCount = sentiments.length;
+//POSITIVE
 const positiveCount = sentiments.filter(
   (sentiment) => sentiment === "positive"
 ).length;
 const positivePercentage = Math.round((positiveCount / totalCount) * 100);
-const horizontalBarData2 = [
+//NEGATIVE
+const negativeCount = sentiments.filter(
+  (sentiment) => sentiment === "negative"
+).length;
+const negativePercentage = Math.round((negativeCount / totalCount) * 100);
+//NEUTRAL
+const neutralCount = sentiments.filter(
+  (sentiment) => sentiment === "neutral"
+).length;
+const neutralPercentage = Math.round((neutralCount / totalCount) * 100);
+//CREATES NEW OBJECT
+const horizontalBarData = [
   {
     label: "Positive",
     number: positiveCount,
     color: "#f22",
     percent: positivePercentage,
   },
+  {
+    label: "Negative",
+    number: negativeCount,
+    color: "#56a",
+    percent: negativePercentage,
+  },
+  {
+    label: "Neutral",
+    number: neutralCount,
+    color: "#2a5",
+    percent: neutralPercentage,
+  },
 ];
-console.log(horizontalBarData2);
-//******************************* */
+console.log(horizontalBarData);
 
 //VERTICAL BAR CHART DATA
 const verticalBarData = [
@@ -56,19 +78,12 @@ const verticalBarData = [
   { label: "Label 4", value: 25, color: "#E0393E" },
 ];
 
-//HORIZTONAL BAR CHART DATA
-const horizontalBarData = [
-  { label: "Positive", percent: 100, color: "#f22", number: 7 }, // red
-  { label: "Negative", percent: 25, color: "#56a", number: 2 }, // blue
-  { label: "Neutral", percent: 38, color: "#2a5", number: 2 }, // green
-];
-
 const Index = () => {
   return (
     <Root>
       <TableComponent data={data} />
       <AverageAmountOwed numbers={amountsOwed} />
-      <Sentiment sentiments={sentiments} />
+      {/* <Sentiment sentiments={sentiments} /> */}
       <VerticalBarChart data={verticalBarData} />
       <HorizontalBarChart data={horizontalBarData} />
     </Root>
