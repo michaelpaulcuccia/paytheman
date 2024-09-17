@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
+import { data as allData } from "../data";
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaMoneyBillWave } from "react-icons/fa";
 import { FaOrcid } from "react-icons/fa6";
@@ -13,6 +14,7 @@ import { MdSentimentNeutral } from "react-icons/md";
 
 const Root = styled.div`
   background: #f0f0f0;
+  padding: 20px;
 `;
 
 const OutputRoot = styled.div`
@@ -26,6 +28,8 @@ const TwoCol = styled.div`
 
   @media (max-width: 800px) {
     flex-direction: column;
+    align-items: center;
+    gap: 0;
   }
 `;
 
@@ -38,7 +42,11 @@ const Tab = styled.div`
   margin: 12px;
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 370px;
+
+  @media (max-width: 800px) {
+    width: 90%;
+  }
 
   .icon-container {
     margin-right: 18px;
@@ -51,7 +59,7 @@ const Tab = styled.div`
   }
 `;
 
-const StyledTab = styled(Tab)`
+const TabV2 = styled(Tab)`
   flex-direction: column;
   align-items: flex-start;
 
@@ -75,8 +83,8 @@ export default function DebtInfoComponent({ data }) {
   } = data;
 
   return (
-    <Root>
-      <TwoCol>
+    <>
+      <Root>
         <Tab>
           <div className="icon-container">
             <FaOrcid />
@@ -96,8 +104,7 @@ export default function DebtInfoComponent({ data }) {
             {data.debtor.company}
           </Link>
         </Tab>
-      </TwoCol>
-      <TwoCol>
+
         <Tab>
           <div className="icon-container">
             <TbReportMoney />
@@ -111,12 +118,11 @@ export default function DebtInfoComponent({ data }) {
           </div>
           <span>Date of Original Debt:</span> {dateOfOriginalDebt}
         </Tab>
-      </TwoCol>
-      <br />
-      <br />
-      {contactWith.map((contact, i) => (
-        <OutputRoot key={i}>
-          <TwoCol>
+
+        <br />
+        <br />
+        {contactWith.map((contact, i) => (
+          <OutputRoot key={i}>
             <Tab>
               <div className="icon-container">
                 <FaCalendarAlt />
@@ -124,6 +130,7 @@ export default function DebtInfoComponent({ data }) {
               <span>Date of Communication:</span>
               {contact.dateOfContact}
             </Tab>
+
             <Tab>
               <div className="icon-container">
                 <FaMoneyBillWave />
@@ -131,51 +138,54 @@ export default function DebtInfoComponent({ data }) {
               <span>Current Offer:</span> ${contact.offer.amount} at{" "}
               {contact.offer.frequency}
             </Tab>
-          </TwoCol>
-          <TwoCol>
-            <StyledTab>
-              <div className="top-section">
-                <div className="icon-container">
-                  {" "}
-                  <TbMessageShare />
-                </div>
-                <span>Messages to Debtor: </span>
-              </div>
-              <div className="bottom-section">
-                {contact.messages.map((message, j) => (
-                  <div key={j}>
-                    {j + 1}: {message}
+
+            <TwoCol>
+              <TabV2>
+                <div className="top-section">
+                  <div className="icon-container">
+                    {" "}
+                    <TbMessageShare />
                   </div>
-                ))}
-              </div>
-            </StyledTab>
-            <StyledTab>
-              <div className="top-section">
-                <div className="icon-container">
-                  {" "}
-                  <TbMessageSearch />
+                  <span>Messages to Debtor: </span>
                 </div>
-                <span>Messages from Debtor: </span>
-              </div>
-              <div className="bottom-section">
-                {contact.response.map((res, k) => (
-                  <div key={k}>
-                    {k + 1}: {res}
+                <div className="bottom-section">
+                  {contact.messages.map((message, j) => (
+                    <div key={j}>
+                      {j + 1}: {message}
+                    </div>
+                  ))}
+                </div>
+              </TabV2>
+              <TabV2>
+                <div className="top-section">
+                  <div className="icon-container">
+                    {" "}
+                    <TbMessageSearch />
                   </div>
-                ))}
+                  <span>Messages from Debtor: </span>
+                </div>
+                <div className="bottom-section">
+                  {contact.response.map((res, k) => (
+                    <div key={k}>
+                      {k + 1}: {res}
+                    </div>
+                  ))}
+                </div>
+              </TabV2>
+            </TwoCol>
+
+            <Tab>
+              <div className="icon-container">
+                <MdSentimentNeutral />
               </div>
-            </StyledTab>
-          </TwoCol>
-          <Tab style={{ width: "48%" }}>
-            <div className="icon-container">
-              <MdSentimentNeutral />
-            </div>
-            <span>Sentiment:</span>
-            {contact.sentiment}
-          </Tab>
-          <br />
-        </OutputRoot>
-      ))}
-    </Root>
+              <span>Sentiment:</span>
+              {contact.sentiment}
+            </Tab>
+
+            <br />
+          </OutputRoot>
+        ))}
+      </Root>
+    </>
   );
 }
