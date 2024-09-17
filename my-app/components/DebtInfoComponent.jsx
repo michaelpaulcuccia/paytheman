@@ -12,11 +12,6 @@ import { TbMessageSearch } from "react-icons/tb";
 import { MdSentimentNeutral } from "react-icons/md";
 
 const Root = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 18px 12px;
   background: #f0f0f0;
 `;
 
@@ -24,27 +19,26 @@ const OutputRoot = styled.div`
   margin-bottom: 32px;
 `;
 
-const PageFlex = styled.div`
+const TwoCol = styled.div`
   display: flex;
-  //align-items: flex-start;
-  gap: 18px;
-  width: 80%;
-`;
+  justify-content: center;
+  gap: 24px;
 
-const ColFlex = styled.div`
-  display: flex;
-  flex-direction: column;
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 const Tab = styled.div`
-  flex-grow: 1; /* Ensure all tabs grow equally */
+  flex-grow: 1;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.08);
   padding: 20px 10px;
   background: white;
-  margin: 12px 18px 12px 0;
+  margin: 12px;
   display: flex;
-  align-items: center; /* Vertically align content */
+  align-items: center;
+  width: 100%;
 
   .icon-container {
     margin-right: 18px;
@@ -57,6 +51,24 @@ const Tab = styled.div`
   }
 `;
 
+const StyledTab = styled(Tab)`
+  flex-direction: column;
+  align-items: flex-start;
+
+  .top-section {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .bottom-section {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+`;
+
 export default function DebtInfoComponent({ data }) {
   const {
     debtor: { contactWith, dateOfOriginalDebt },
@@ -64,7 +76,7 @@ export default function DebtInfoComponent({ data }) {
 
   return (
     <Root>
-      <PageFlex>
+      <TwoCol>
         <Tab>
           <div className="icon-container">
             <FaOrcid />
@@ -84,8 +96,8 @@ export default function DebtInfoComponent({ data }) {
             {data.debtor.company}
           </Link>
         </Tab>
-      </PageFlex>
-      <PageFlex>
+      </TwoCol>
+      <TwoCol>
         <Tab>
           <div className="icon-container">
             <TbReportMoney />
@@ -99,11 +111,12 @@ export default function DebtInfoComponent({ data }) {
           </div>
           <span>Date of Original Debt:</span> {dateOfOriginalDebt}
         </Tab>
-      </PageFlex>
+      </TwoCol>
+      <br />
       <br />
       {contactWith.map((contact, i) => (
         <OutputRoot key={i}>
-          <PageFlex>
+          <TwoCol>
             <Tab>
               <div className="icon-container">
                 <FaCalendarAlt />
@@ -118,44 +131,49 @@ export default function DebtInfoComponent({ data }) {
               <span>Current Offer:</span> ${contact.offer.amount} at{" "}
               {contact.offer.frequency}
             </Tab>
-          </PageFlex>
-          <PageFlex>
-            <Tab>
-              <div className="icon-container">
-                <TbMessageShare />
+          </TwoCol>
+          <TwoCol>
+            <StyledTab>
+              <div className="top-section">
+                <div className="icon-container">
+                  {" "}
+                  <TbMessageShare />
+                </div>
+                <span>Messages to Debtor: </span>
               </div>
-              <span>Messages to Debtor: </span>
-              <ColFlex>
+              <div className="bottom-section">
                 {contact.messages.map((message, j) => (
                   <div key={j}>
                     {j + 1}: {message}
                   </div>
                 ))}
-              </ColFlex>
-            </Tab>
-
-            <Tab>
-              <div className="icon-container">
-                <TbMessageSearch />
               </div>
-              <span>Messages from Debtor: </span>
-              <ColFlex>
+            </StyledTab>
+            <StyledTab>
+              <div className="top-section">
+                <div className="icon-container">
+                  {" "}
+                  <TbMessageSearch />
+                </div>
+                <span>Messages from Debtor: </span>
+              </div>
+              <div className="bottom-section">
                 {contact.response.map((res, k) => (
                   <div key={k}>
                     {k + 1}: {res}
                   </div>
                 ))}
-              </ColFlex>
-            </Tab>
-          </PageFlex>
-
-          <Tab>
+              </div>
+            </StyledTab>
+          </TwoCol>
+          <Tab style={{ width: "48%" }}>
             <div className="icon-container">
               <MdSentimentNeutral />
             </div>
             <span>Sentiment:</span>
             {contact.sentiment}
           </Tab>
+          <br />
         </OutputRoot>
       ))}
     </Root>
