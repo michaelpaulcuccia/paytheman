@@ -28,7 +28,7 @@ const TwoCol = styled.div`
 
   @media (max-width: 800px) {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 0;
   }
 `;
