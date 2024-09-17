@@ -88,9 +88,17 @@ const TableComponent = ({ data }) => {
           {data.map((person, index) => (
             <Tr key={person.id} $isEven={index % 2 === 0}>
               <Td>
-                {person.name.firstName}{" "}
-                {person.name.middleName ? person.name.middleName + " " : ""}
-                {person.name.lastName}
+                <Link
+                  href={`/debtorinfo/${person.id}`}
+                  style={{
+                    color: "blue",
+                    textDecoration: "underline",
+                  }}
+                >
+                  {person.name.firstName}{" "}
+                  {person.name.middleName ? person.name.middleName + " " : ""}
+                  {person.name.lastName}
+                </Link>
               </Td>
               <Td>{person.communication.email.primary}</Td>
               <Td>{person.communication.phone.cell}</Td>

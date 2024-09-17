@@ -131,27 +131,3 @@ const Index = () => {
 };
 
 export default Index;
-
-/*
-In JavaScript, flatMap() is a method available on arrays that combines the functionality of map() and flat(). It first maps over each element in the array, applies a function to each element, and then flattens the resulting array by one level.
-
-array.flatMap(callback(currentValue[, index[, array]])[, thisArg])
-
-callback: The function that is executed for each element of the array. It can return an array or a single value.
-currentValue: The current element being processed.
-index (optional): The index of the current element.
-array (optional): The array on which flatMap() is called.
-thisArg (optional): A value to use as this inside the callback function.
-
-*******************************************************************************************************************************************
-
-const numbers = [1, 2, 3, 4];
-
-// Using flatMap to double the values and then flatten the result
-const result = numbers.flatMap(x => [x, x * 2]);
-
-console.log(result); // Output: [1, 2, 2, 4, 3, 6, 4, 8]
-
-map() would return an array of arrays [[1, 2], [2, 4], [3, 6], [4, 8]].
-flatMap() flattens this result by one level, producing [1, 2, 2, 4, 3, 6, 4, 8].
-*/

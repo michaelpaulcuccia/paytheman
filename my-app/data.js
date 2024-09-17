@@ -60,6 +60,20 @@ export const data = [
               response: ["I am looking into how to pay this"],
               sentiment: "neutral",
             },
+            {
+              dateOfContact: "2024-09-14",
+
+              offer: {
+                amount: 2000,
+                frequency: "monthly",
+              },
+              messages: [
+                "Are you still interested in paying?",
+                "Thank you for your response. We look forward to working with you.",
+              ],
+              response: ["I am still looking into how to pay this"],
+              sentiment: "neutral",
+            },
           ],
         },
       },
