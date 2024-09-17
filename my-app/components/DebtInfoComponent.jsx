@@ -11,11 +11,12 @@ import { TbMessageShare } from "react-icons/tb";
 import { TbMessageSearch } from "react-icons/tb";
 
 const Root = styled.div`
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 18px 12px;
+  background: #f0f0f0;
 `;
 
 const OutputRoot = styled.div`
@@ -42,6 +43,7 @@ const Tab = styled.div`
   margin: 12px 18px 12px 0;
   display: flex;
   min-width: 300px;
+  background: white;
 
   .icon-container {
     margin-right: 18px;
