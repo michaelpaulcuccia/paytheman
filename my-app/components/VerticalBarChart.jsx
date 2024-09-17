@@ -4,6 +4,10 @@ import styled from "styled-components";
 const ComponentWrapper = styled.div`
   width: 100%;
   margin-inline: auto;
+
+  @media (max-width: 500px) {
+    font-size: 16px;
+  }
 `;
 
 const BarChartContainer = styled.div`
@@ -63,6 +67,13 @@ const DataContainer = styled.div`
   margin-top: 4px;
 `;
 
+const AvgAmtOweContainer = styled.div`
+  margin-top: 40px;
+  @media (max-width: 500px) {
+    margin-top: 56px;
+  }
+`;
+
 const calculateAverage = (numbers) => {
   if (numbers.length === 0) return 0;
   const total = numbers.reduce((acc, num) => acc + num, 0);
@@ -91,7 +102,7 @@ const VerticalBarChart = ({ data, amountsOwed }) => {
           </BarItem>
         ))}
       </BarChartContainer>
-      <div style={{ marginTop: "40px" }}>Average Amount Owed: ${average}</div>
+      <AvgAmtOweContainer>Average Amount Owed: ${average}</AvgAmtOweContainer>
     </ComponentWrapper>
   );
 };
