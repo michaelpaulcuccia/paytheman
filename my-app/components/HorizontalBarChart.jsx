@@ -69,7 +69,7 @@ const Part = styled.div`
     @media (max-width: 500px) {
       text-align: left;
       padding-right: 0;
-      font-size: 1em;
+      font-size: 1.1em;
     }
   }
 `;
@@ -98,7 +98,7 @@ const Bar = styled.div`
 
   .label {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 0.5em;
     transform: translateX(0%) translateY(-50%);
     z-index: 1;
@@ -106,9 +106,8 @@ const Bar = styled.div`
     font-weight: 600;
 
     @media (max-width: 500px) {
-      top: 40%;
       left: 1em;
-      font-size: 0.9em;
+      font-size: 0.8em;
     }
   }
 `;

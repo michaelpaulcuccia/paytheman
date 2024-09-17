@@ -12,6 +12,7 @@ const Root = styled.div`
   @media (max-width: 1050px) {
     flex-direction: column;
     gap: 8px;
+    padding: 20px 10px;
   }
 
   &::before {
