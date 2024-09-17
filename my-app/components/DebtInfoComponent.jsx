@@ -6,6 +6,9 @@ import { FaMoneyBillWave } from "react-icons/fa";
 import { FaOrcid } from "react-icons/fa6";
 import { TbReportMoney } from "react-icons/tb";
 import { FaCalendarCheck } from "react-icons/fa";
+import { IoIosBusiness } from "react-icons/io";
+import { TbMessageShare } from "react-icons/tb";
+import { TbMessageSearch } from "react-icons/tb";
 
 const Root = styled.div`
   border: 1px solid black;
@@ -47,6 +50,7 @@ const Tab = styled.div`
   span {
     color: #1d2125;
     font-weight: bold;
+    margin-right: 4px;
   }
 `;
 
@@ -57,29 +61,66 @@ export default function DebtInfoComponent({ data }) {
 
   return (
     <Root>
-      <div>
-        <h1>Debt Details</h1>
-        <p>
-          <strong>Debt ID:</strong> {data.debtId}
-        </p>
-        <div>
-          <strong>Company:</strong>
-          <Link
-            href={`/creditor/${data.debtor.company}`}
-            style={{ color: "blue", textDecoration: "underline" }}
-          >
-            {data.debtor.company}
-          </Link>
+      <Tab>
+        <div className="icon-container">
+          <FaOrcid />
         </div>
-        <p>
-          <strong>Amount Originally Owed:</strong> $
-          {data.debtor.amountOriginallyOwed}
-        </p>
-        <p>
-          <strong>Date of Original Debt:</strong> {dateOfOriginalDebt}
-        </p>
+        <span>Debt ID:</span>
+        {data.debtId}
+      </Tab>
+      <Tab>
+        <div className="icon-container">
+          <IoIosBusiness />
+        </div>
+        <span>Company Name:</span>
+        <Link
+          href={`/creditor/${data.debtor.company}`}
+          style={{ color: "blue", textDecoration: "underline" }}
+        >
+          {data.debtor.company}
+        </Link>
+      </Tab>
+      <Tab>
+        <div className="icon-container">
+          <TbReportMoney />
+        </div>
+        <span>Amount Originally Owed:</span>${data.debtor.amountOriginallyOwed}
+      </Tab>
+      <Tab>
+        <div className="icon-container">
+          <FaCalendarCheck />
+        </div>
+        <span>Date of Original Debt:</span> {dateOfOriginalDebt}
+      </Tab>
+      <br />
+      <br />
+      <br />
+      <Tab>
+        <div className="icon-container">
+          <FaCalendarAlt />
+        </div>
+        <span>Date of Communication:</span>
+      </Tab>
+      <Tab>
+        <div className="icon-container">
+          <FaMoneyBillWave />
+        </div>
+        <span>Current Offer:</span>
+      </Tab>
+      <Tab>
+        <div className="icon-container">
+          <TbMessageShare />
+        </div>
+        <span>Messages to Debtor: </span>
+      </Tab>
+      <Tab>
+        <div className="icon-container">
+          <TbMessageSearch />
+        </div>
+        <span>Messages from Debtor: </span>
+      </Tab>
+      <div>
         <br />
-        <h3>Recent Communications</h3>
         <br />
         {contactWith.map((contact, i) => (
           <OutputRoot key={i}>
@@ -115,38 +156,6 @@ export default function DebtInfoComponent({ data }) {
           </OutputRoot>
         ))}
       </div>
-      <div>new container</div>
-
-      <Tab>
-        <div className="icon-container">
-          <FaCalendarAlt />
-        </div>
-        <span>Date of Communication:</span>
-      </Tab>
-      <Tab>
-        <div className="icon-container">
-          <FaMoneyBillWave />
-        </div>
-        <span>Current Offer:</span>
-      </Tab>
-      <Tab>
-        <div className="icon-container">
-          <FaOrcid />
-        </div>
-        <span>Debt ID:</span>
-      </Tab>
-      <Tab>
-        <div className="icon-container">
-          <TbReportMoney />
-        </div>
-        <span>Amount Originally Owed:</span>
-      </Tab>
-      <Tab>
-        <div className="icon-container">
-          <FaCalendarCheck />
-        </div>
-        <span>Date of Original Debt: </span>
-      </Tab>
     </Root>
   );
 }
