@@ -9,6 +9,7 @@ import { FaCalendarCheck } from "react-icons/fa";
 import { IoIosBusiness } from "react-icons/io";
 import { TbMessageShare } from "react-icons/tb";
 import { TbMessageSearch } from "react-icons/tb";
+import { MdSentimentNeutral } from "react-icons/md";
 
 const Root = styled.div`
   display: flex;
@@ -20,30 +21,30 @@ const Root = styled.div`
 `;
 
 const OutputRoot = styled.div`
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 `;
 
-const CommsContainer = styled.div`
+const PageFlex = styled.div`
   display: flex;
-  align-items: flex-start;
+  //align-items: flex-start;
   gap: 18px;
+  width: 80%;
+`;
 
-  .comms-output {
-    width: 50%;
-    div {
-      margin: 3px 0px;
-    }
-  }
+const ColFlex = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 const Tab = styled.div`
+  flex-grow: 1; /* Ensure all tabs grow equally */
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.08);
   padding: 20px 10px;
+  background: white;
   margin: 12px 18px 12px 0;
   display: flex;
-  min-width: 300px;
-  background: white;
+  align-items: center; /* Vertically align content */
 
   .icon-container {
     margin-right: 18px;
@@ -63,101 +64,100 @@ export default function DebtInfoComponent({ data }) {
 
   return (
     <Root>
-      <Tab>
-        <div className="icon-container">
-          <FaOrcid />
-        </div>
-        <span>Debt ID:</span>
-        {data.debtId}
-      </Tab>
-      <Tab>
-        <div className="icon-container">
-          <IoIosBusiness />
-        </div>
-        <span>Company Name:</span>
-        <Link
-          href={`/creditor/${data.debtor.company}`}
-          style={{ color: "blue", textDecoration: "underline" }}
-        >
-          {data.debtor.company}
-        </Link>
-      </Tab>
-      <Tab>
-        <div className="icon-container">
-          <TbReportMoney />
-        </div>
-        <span>Amount Originally Owed:</span>${data.debtor.amountOriginallyOwed}
-      </Tab>
-      <Tab>
-        <div className="icon-container">
-          <FaCalendarCheck />
-        </div>
-        <span>Date of Original Debt:</span> {dateOfOriginalDebt}
-      </Tab>
+      <PageFlex>
+        <Tab>
+          <div className="icon-container">
+            <FaOrcid />
+          </div>
+          <span>Debt ID:</span>
+          {data.debtId}
+        </Tab>
+        <Tab>
+          <div className="icon-container">
+            <IoIosBusiness />
+          </div>
+          <span>Company Name:</span>
+          <Link
+            href={`/creditor/${data.debtor.company}`}
+            style={{ color: "blue", textDecoration: "underline" }}
+          >
+            {data.debtor.company}
+          </Link>
+        </Tab>
+      </PageFlex>
+      <PageFlex>
+        <Tab>
+          <div className="icon-container">
+            <TbReportMoney />
+          </div>
+          <span>Amount Originally Owed:</span>$
+          {data.debtor.amountOriginallyOwed}
+        </Tab>
+        <Tab>
+          <div className="icon-container">
+            <FaCalendarCheck />
+          </div>
+          <span>Date of Original Debt:</span> {dateOfOriginalDebt}
+        </Tab>
+      </PageFlex>
       <br />
-      <br />
-      <br />
-      <Tab>
-        <div className="icon-container">
-          <FaCalendarAlt />
-        </div>
-        <span>Date of Communication:</span>
-      </Tab>
-      <Tab>
-        <div className="icon-container">
-          <FaMoneyBillWave />
-        </div>
-        <span>Current Offer:</span>
-      </Tab>
-      <Tab>
-        <div className="icon-container">
-          <TbMessageShare />
-        </div>
-        <span>Messages to Debtor: </span>
-      </Tab>
-      <Tab>
-        <div className="icon-container">
-          <TbMessageSearch />
-        </div>
-        <span>Messages from Debtor: </span>
-      </Tab>
-      <div>
-        <br />
-        <br />
-        {contactWith.map((contact, i) => (
-          <OutputRoot key={i}>
-            <p>
-              <strong>Date of Communication:</strong> {contact.dateOfContact}
-            </p>
-            <p>
-              <strong>Current Offer: </strong> ${contact.offer.amount} at{" "}
+      {contactWith.map((contact, i) => (
+        <OutputRoot key={i}>
+          <PageFlex>
+            <Tab>
+              <div className="icon-container">
+                <FaCalendarAlt />
+              </div>
+              <span>Date of Communication:</span>
+              {contact.dateOfContact}
+            </Tab>
+            <Tab>
+              <div className="icon-container">
+                <FaMoneyBillWave />
+              </div>
+              <span>Current Offer:</span> ${contact.offer.amount} at{" "}
               {contact.offer.frequency}
-            </p>
-            <CommsContainer>
-              <div className="comms-output">
-                <h3>Messages to Debtor</h3>
+            </Tab>
+          </PageFlex>
+          <PageFlex>
+            <Tab>
+              <div className="icon-container">
+                <TbMessageShare />
+              </div>
+              <span>Messages to Debtor: </span>
+              <ColFlex>
                 {contact.messages.map((message, j) => (
                   <div key={j}>
                     {j + 1}: {message}
                   </div>
                 ))}
+              </ColFlex>
+            </Tab>
+
+            <Tab>
+              <div className="icon-container">
+                <TbMessageSearch />
               </div>
-              <div className="comms-output">
-                <h3>Responses from Debtor</h3>
+              <span>Messages from Debtor: </span>
+              <ColFlex>
                 {contact.response.map((res, k) => (
                   <div key={k}>
                     {k + 1}: {res}
                   </div>
                 ))}
-              </div>
-            </CommsContainer>
+              </ColFlex>
+            </Tab>
+          </PageFlex>
 
-            <p>
-              <strong>Sentiment:</strong> {contact.sentiment}
-            </p>
-          </OutputRoot>
-        ))}
-      </div>
+          <Tab>
+            <div className="icon-container">
+              <MdSentimentNeutral />
+            </div>
+            <span>Sentiment:</span>
+            {contact.sentiment}
+          </Tab>
+        </OutputRoot>
+      ))}
     </Root>
   );
 }
