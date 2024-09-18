@@ -67,7 +67,6 @@ const Part = styled.div`
     }
 
     @media (max-width: 500px) {
-      text-align: left;
       padding-right: 0;
       font-size: 1.1em;
     }
