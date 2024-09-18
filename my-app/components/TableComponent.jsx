@@ -11,21 +11,6 @@ const TableContainer = styled.div`
   overflow-x: auto;
   border-radius: 5px 5px 0 0;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-
-  &::-webkit-scrollbar {
-    height: 0.5rem;
-    width: 0.5rem;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    border-radius: 0.5rem;
-    background-color: #0004;
-    visibility: hidden;
-  }
-
-  &:hover::-webkit-scrollbar-thumb {
-    visibility: visible;
-  }
 `;
 
 const Table = styled.table`
