@@ -106,8 +106,8 @@ const Bar = styled.div`
     font-weight: 600;
 
     @media (max-width: 500px) {
-      left: 1em;
-      font-size: 0.8em;
+      left: 1.15em;
+      font-size: 0.78em;
     }
   }
 `;
