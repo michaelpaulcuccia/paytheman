@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
-import { data as allData } from "../data";
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaMoneyBillWave } from "react-icons/fa";
 import { FaOrcid } from "react-icons/fa6";
@@ -11,6 +10,7 @@ import { IoIosBusiness } from "react-icons/io";
 import { TbMessageShare } from "react-icons/tb";
 import { TbMessageSearch } from "react-icons/tb";
 import { MdSentimentNeutral } from "react-icons/md";
+import { TwoCols, Tab, AltTab } from "./Atoms";
 
 const Root = styled.div`
   background: #f0f0f0;
@@ -19,62 +19,6 @@ const Root = styled.div`
 
 const OutputRoot = styled.div`
   margin-bottom: 32px;
-`;
-
-const TwoCol = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-
-  @media (max-width: 800px) {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-  }
-`;
-
-const Tab = styled.div`
-  flex-grow: 1;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.08);
-  padding: 20px 10px;
-  background: white;
-  margin: 12px;
-  display: flex;
-  align-items: center;
-  width: 370px;
-
-  @media (max-width: 800px) {
-    width: 90%;
-  }
-
-  .icon-container {
-    margin-right: 18px;
-  }
-
-  span {
-    color: #1d2125;
-    font-weight: bold;
-    margin-right: 4px;
-  }
-`;
-
-const TabV2 = styled(Tab)`
-  flex-direction: column;
-  align-items: flex-start;
-
-  .top-section {
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
-
-  .bottom-section {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
 `;
 
 export default function DebtInfoComponent({ data }) {
@@ -139,8 +83,8 @@ export default function DebtInfoComponent({ data }) {
               {contact.offer.frequency}
             </Tab>
 
-            <TwoCol>
-              <TabV2>
+            <TwoCols>
+              <AltTab>
                 <div className="top-section">
                   <div className="icon-container">
                     {" "}
@@ -155,8 +99,8 @@ export default function DebtInfoComponent({ data }) {
                     </div>
                   ))}
                 </div>
-              </TabV2>
-              <TabV2>
+              </AltTab>
+              <AltTab>
                 <div className="top-section">
                   <div className="icon-container">
                     {" "}
@@ -171,8 +115,8 @@ export default function DebtInfoComponent({ data }) {
                     </div>
                   ))}
                 </div>
-              </TabV2>
-            </TwoCol>
+              </AltTab>
+            </TwoCols>
 
             <Tab>
               <div className="icon-container">
