@@ -2,7 +2,7 @@
 import React from "react";
 import { usePathname } from "next/navigation";
 import { data } from "../../../../data";
-import DebtInfoComponent from "../../../../components/DebtInfoComponent";
+import DebtInfoView from "../../../../components/DebtInfoView";
 
 const findDebtById = (debtId) => {
   for (const person of data) {
@@ -24,7 +24,7 @@ export default function Page() {
 
   return (
     <div>
-      <DebtInfoComponent data={debt} />
+      <DebtInfoView data={debt} />
     </div>
   );
 }

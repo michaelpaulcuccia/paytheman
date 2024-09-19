@@ -21,7 +21,7 @@ const OutputRoot = styled.div`
   margin-bottom: 32px;
 `;
 
-export default function DebtInfoComponent({ data }) {
+export default function DebtInfoView({ data }) {
   const {
     debtor: { contactWith, dateOfOriginalDebt },
   } = data;
